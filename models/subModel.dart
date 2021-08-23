@@ -1,17 +1,29 @@
 import 'package:flutter/foundation.dart';
 
-class SubModel{
-  String title;
-  String singer;
-  String lyrics;
-  String jacket;
-  String titles;
+class SubDataModel{
+  String? title;
+  String? singer;
+  String? jacket;
+  String? songText;
 
-  SubModel({
-    @required this.title,
-    @required this.singer,
-    @required this.lyrics,
-    @required this.jacket,
-    @required this.titles
+  SubDataModel({
+    required this.title,
+    required this.jacket,
+    required this.songText,
+    required this.singer,
   });
+
+  SubDataModel.init(Map<String,dynamic> v){
+    this.title = v["title"].toString();
+    this.jacket = v["jacket"].toString();
+    this.songText = v["songText"].toString();
+    this.singer = v["singer"].toString();
+    //return SubDataModel.init(v);
+    //return SubDataModel();
+  }
+
+  // factory SubDataModel.fInit(Map<String,dynamic> v){
+  //   //return new SubDataModel();
+  //   return new SubDataModel.init(v);
+  // }
 }
