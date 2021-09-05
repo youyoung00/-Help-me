@@ -25,8 +25,8 @@ class _ThreePageState extends State<ThreePage> {
 
   Future<void> detailConnect() async{
    http.Response res = await http.get(Uri.parse("http://192.168.219.197:3000/detailData/${widget.i}"));
-   Map<String,dynamic> data = json.decode(res.body);
-   this.viewData = SubDataModel.fInit(data);
+   Map<String,dynamic> detdata = json.decode(res.body);
+   this.viewData = SubDataModel.fInit(detdata);
    return;
   }
 
